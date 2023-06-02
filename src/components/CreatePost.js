@@ -1,21 +1,5 @@
 import { useState } from 'react';
 
-function CreatePost(){
-    return (
-        <div>
-            <h1>Login</h1>
-            <form>
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
-                <input type="submit" value="Login" />
-            </form>
-        </div>
-    );
-
-};
-
-
-
 function CreatePost() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');

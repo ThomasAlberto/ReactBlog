@@ -1,19 +1,5 @@
 import { useState } from 'react';
 
-function Register() {
-    return (
-        <div>
-            <h1>Register</h1>
-            <form>
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
-                <input type="submit" value="Register" />
-            </form>
-        </div>
-    );
-}
-
-
 
 function Register() {
 
@@ -34,6 +20,18 @@ that you can use to change the value of the username state.
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
   
+/* 
+This code is defining a function called handleSubmit. This function is being assigned to handle form submissions. Here's what it does:
+
+(e) => { ... }: This is the syntax for defining a function in JavaScript. (e) defines the function's parameter, which will be the 
+event object automatically passed by the browser when the event (form submission, in this case) happens.
+e.preventDefault();: This is a method on the event object that prevents the default action the browser would take in response to the 
+event. For form submissions, the default action is to send a GET or POST request and refresh the page, which isn't usually what you want in a React app.
+
+defining a function
+(parameters) => { function body }
+*/
+
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log(username, password);
@@ -49,6 +47,16 @@ that you can use to change the value of the username state.
             placeholder="Username" 
             value={username} 
             onChange={(e) => setUsername(e.target.value)}
+/*
+onChange is a special prop that takes a function. The function is called every time the value of the input field changes.
+
+(e) => setUsername(e.target.value): This is the function being passed to onChange. It takes an event object as a parameter. 
+e.target refers to the element the event was fired on (the input field), and e.target.value is the current value of the input field.
+setUsername(e.target.value): This calls the setUsername function (which was returned by useState) and sets the username state to the 
+current value of the input field.
+So overall, onChange={(e) => setUsername(e.target.value)} means "when the value of this input field changes (when the user types into it), 
+update the username state to match the input field's current value".
+*/
           />
           <input 
             type="password" 
